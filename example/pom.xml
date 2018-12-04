@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.github.jamesdbaker</groupId>
+  <artifactId>javadoc9-example</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>Javadoc 9</name>
+  <description>Example project using the Java 9 taglets</description>
+
+  <properties>
+    <maven.compiler.source>9</maven.compiler.source>
+    <maven.compiler.target>9</maven.compiler.target>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.0.1</version>
+        <configuration>
+          <taglets>
+            <taglet>
+              <tagletClass>io.github.jamesdbaker.javadoc9.taglets.CoderTaglet</tagletClass>
+            </taglet>
+            <taglet>
+              <tagletClass>io.github.jamesdbaker.javadoc9.taglets.LanguageTaglet</tagletClass>
+            </taglet>
+            <taglet>
+              <tagletClass>io.github.jamesdbaker.javadoc9.taglets.LanguagesTaglet</tagletClass>
+            </taglet>
+          </taglets>
+
+          <tagletArtifact>
+            <groupId>io.github.jamesdbaker</groupId>
+            <artifactId>javadoc9-taglet</artifactId>
+            <version>1.0-SNAPSHOT</version>
+          </tagletArtifact>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
